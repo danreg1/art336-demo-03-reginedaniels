@@ -25,7 +25,6 @@ nav[role="navigation"] ul a {
     text-decoration: none;
     transition: border 400ms linear;
     transition: color 400ms linear;
-    
 }
 
 nav[role="navigation"] ul a:hover {
@@ -40,12 +39,11 @@ header[role="banner"] {
     background-color: $color;
     color: $background-color;
     padding: 12px;
-
 }
 
 header[role="banner"] img {
     border-radius: 50%;
-    width: 75%;
+    max-width: 75%;
 }
 
 header[role="banner"] p {
@@ -63,6 +61,21 @@ header[role="banner"] a:hover {
     transition: color 400ms linear;
 }
 
+.contact svg {
+    height: 24px;
+    width: 24px;
+}
+
+.contact a svg path {
+    fill: $background-color;
+    transform: fill 400ms linear;
+}
+
+.contact a:hover svg path {
+    fill: darken($background-color,12%);
+    transform: fill 400ms linear;
+}
+
 main[role="main"] h1 {
     animation: colorchange-font 5s linear 1s infinite alternate;
     background-color: $color;
@@ -73,8 +86,9 @@ main[role="main"] h1 {
 footer[role="contentinfo"] {
     animation: colorchange-font 5s linear 1s infinite alternate;
     @include body-font-italic;
-    background-color: $color;
-    color: $background-color;
+    @include reversed-background-font;
+    //background-color: $color;
+    //color: $background-color;
     line-height: 1;
     padding: 4px 8px 8px 8px;
 }
